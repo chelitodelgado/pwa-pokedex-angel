@@ -1,0 +1,13 @@
+<div class="cards-list">
+  <div class="card" *ngFor="let item of data" [routerLink]="['/pokemon',item.nombre]" >
+    <div class="card_image">
+      <img [src]="item.sprite" class="img-fluid scale-up-center" />
+    </div>
+    <div class="card_title title-text">
+      <p>{{item.nombre}}</p>
+      <ng-container *ngFor="let tipo of item.tipo">
+        <span class="tipos badge rounded-pill bg-primary m-1">{{tipo.type.name}}</span>
+      </ng-container>
+    </div>
+  </div>
+</div>

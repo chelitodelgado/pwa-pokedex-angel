@@ -1,0 +1,8 @@
+<div class="container py-5">
+	<div class="container__item">
+		<form class="form">
+			<input type="text"  #pokemon (keyup)="buscar(pokemon.value)" class="form__field" placeholder="Escribe el numero o nombre del pokemon" />
+		</form>
+	</div>
+</div>
+<app-card [data]="pokemons"></app-card>

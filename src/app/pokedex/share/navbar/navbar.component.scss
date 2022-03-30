@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  .nav {
+    position: absolute;
+    left: 34%;
+    transform: translate(-50,-50%);
+    a {
+      font-size: 2rem;
+    }
+    .indicador {
+      display: none;
+      position: absolute;
+      width: 60px;
+      height: 3px;
+      margin-top: 2px;
+      margin-left: 22px;
+      border-radius: 10px;
+      background: blue;
+    }
+    .nav-item:hover {
+      .indicador {
+        display: block;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px)  {
+    .nav {
+      left: 5%;
+      a {
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+}
