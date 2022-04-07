@@ -1,16 +1,8 @@
-<div class="container py-5">
-  <ul class="nav justify-content-center">
-    <li class="nav-item">
-      <a class="nav-link" href="/perfil">Perfil</a>
-      <span class="indicador"></span>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/">Pokedex</a>
-      <span class="indicador"></span>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="https://angel-cv.pages.dev/">Portafolio</a>
-      <span class="indicador"></span>
-    </li>
-  </ul>
+<div class="container">
+    <nav>
+        <ng-container *ngFor="let item of navbar">
+            <a href="{{item.url}}">{{item.item}}</a>
+        </ng-container>
+        <div id="indicator"></div>
+    </nav>
 </div>

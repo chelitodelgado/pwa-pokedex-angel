@@ -7,6 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  navbar = [
+    {
+      item: 'Perfil',
+      url: '/perfil'
+    },
+    {
+      item: 'Pokedex',
+      url: '/'
+    },
+    {
+      item: 'Poratafolio',
+      url: '/portafolio'
+    }
+  ]
   constructor() { }
 
   ngOnInit(): void {

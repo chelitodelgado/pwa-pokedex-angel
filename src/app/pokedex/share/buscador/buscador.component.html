@@ -1,8 +1,12 @@
 <div class="container py-5">
-	<div class="container__item">
-		<form class="form">
-			<input type="text"  #pokemon (keyup)="buscar(pokemon.value)" class="form__field" placeholder="Escribe el numero o nombre del pokemon" />
-		</form>
-	</div>
+    <div class="container__item">
+        <form class="form">
+            <input type="text" #pokemon (keyup)="buscar(pokemon.value)" class="form__field" placeholder="Escribe el numero o nombre del pokemon" required/>
+        </form>
+    </div>
+</div>
+
+<div class="container" *ngIf="exist">
+    <h2>Escribe un pokemon existente...</h2>
 </div>
 <app-card [data]="pokemons"></app-card>

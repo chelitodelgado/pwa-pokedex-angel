@@ -1,42 +1,38 @@
+<section *ngFor="let pokemon of pokemons">
+    <div class="card text-center">
 
-<section>
-  <div class="container" *ngFor="let pokemon of pokemons"  >
-
-    <div class="top">
-      <div class="nameText">
-        <p> cp<span>{{ pokemon.cp }}</span> </p>
-      </div>
-    </div>
-
-    <div class="middleBox">
-      <div class="circulo"></div>
-
-      <div class="firstDiv">
-        <img class="img-perfil" [src]="pokemons[0].sprite"/>
-      </div>
-    </div>
-
-    <div class="bottomDiv">
-
-      <div class="row">
-
-        <div class="col-xl-6">
-          <div class="card">
-            <div class="card-header">
-              <h2>{{ pokemon.nombre | uppercase}}</h2>
-              <div class="bar"></div>
-            </div>
-            <div class="card-body">
-              <div class="btn-group" role="group" *ngFor="let type of pokemon.tipo" >
-                <button class="btn-type">{{ type.type.name }}</button>
-              </div>
-            </div>
-          </div>
+        <div class="card-header">
+            <img class="sprite" [src]="pokemon.sprite">
+            <span class="number"> # {{pokemon.id}}</span>
+            <span class="home" [routerLink]="'/'"> <i class="fa fa-arrow-left"></i> </span>
         </div>
 
-      </div>
-
+        <div class="card-body">
+            <div class="title">
+                <h2>{{ pokemon.nombre | uppercase}}</h2>
+                <div class="btn-group">
+                    <ng-container *ngFor="let type of pokemon.tipo">
+                        <button class="btn-type">{{ type.type.name }}</button>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="habilidades">
+                <h2>Habilidades</h2>
+                <div class="row">
+                    <ng-container *ngFor="let habilidad of pokemon.habilidades">
+                        <div class="col"> <i class="habilidad fa fa-bolt"></i> {{ habilidad.ability.name }} </div>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="espec">
+                <div class="desc">
+                    <div style="display: block">
+                        <canvas baseChart [data]="radarChartData" [options]="radarChartOptions" [type]="radarChartType">
+                        </canvas>
+                    </div>
+                </div>
+                <button class="btn-espec">Estadisticas</button>
+            </div>
+        </div>
     </div>
-
-  </div>
 </section>

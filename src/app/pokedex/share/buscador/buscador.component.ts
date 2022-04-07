@@ -10,6 +10,7 @@ import { PokedexResponse } from '../../models/pokedex.model';
 export class BuscadorComponent implements OnInit {
 
   pokemons: any[] = [];
+  exist: boolean  = false;
   constructor( private pokeService: PokedexService ) { }
 
   ngOnInit(): void {
