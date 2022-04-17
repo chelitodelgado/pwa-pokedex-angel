@@ -8,6 +8,9 @@ import { PokedexService } from './services/pokedex.service';
 // Componentes
 import { CardComponent } from './share/card/card.component';
 import { BuscadorComponent } from './share/buscador/buscador.component';
+import { PerfilComponent } from './perfil/perfil.component';
+
+// Pipes
 import { FilterPipe } from './pipes/filter.pipe';
 
 // Angular Material
@@ -18,6 +21,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     CardComponent,
     BuscadorComponent,
     FilterPipe,
+    PerfilComponent,
   ],
   imports: [
     CommonModule,

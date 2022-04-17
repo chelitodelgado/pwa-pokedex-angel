@@ -1,38 +1,62 @@
 <section *ngFor="let pokemon of pokemons">
-    <div class="card text-center">
+  <div class="card text-center">
 
-        <div class="card-header">
-            <img class="sprite" [src]="pokemon.sprite">
-            <span class="number"> # {{pokemon.id}}</span>
-            <span class="home" [routerLink]="'/'"> <i class="fa fa-arrow-left"></i> </span>
-        </div>
-
-        <div class="card-body">
-            <div class="title">
-                <h2>{{ pokemon.nombre | uppercase}}</h2>
-                <div class="btn-group">
-                    <ng-container *ngFor="let type of pokemon.tipo">
-                        <button class="btn-type">{{ type.type.name }}</button>
-                    </ng-container>
-                </div>
-            </div>
-            <div class="habilidades">
-                <h2>Habilidades</h2>
-                <div class="row">
-                    <ng-container *ngFor="let habilidad of pokemon.habilidades">
-                        <div class="col"> <i class="habilidad fa fa-bolt"></i> {{ habilidad.ability.name }} </div>
-                    </ng-container>
-                </div>
-            </div>
-            <div class="espec">
-                <div class="desc">
-                    <div style="display: block">
-                        <canvas baseChart [data]="radarChartData" [options]="radarChartOptions" [type]="radarChartType">
-                        </canvas>
-                    </div>
-                </div>
-                <button class="btn-espec">Estadisticas</button>
-            </div>
-        </div>
+    <div class="card-header">
+      <img class="sprite" [src]="pokemon.sprite">
+      <span class="number"> # {{pokemon.id}}</span>
+      <span class="home" [routerLink]="'/'"> <i class="fa fa-arrow-left"></i> </span>
     </div>
+
+    <div class="card-body">
+      <div class="title">
+        <h2>{{ pokemon.nombre | uppercase}}</h2>
+        <div class="btn-group">
+          <ng-container *ngFor="let type of pokemon.tipo">
+            <button class="btn-type">{{ type.type.name }}</button>
+          </ng-container>
+        </div>
+      </div>
+      <div class="habilidades">
+        <h2>Habilidades</h2>
+        <div class="row">
+          <ng-container *ngFor="let habilidad of pokemon.habilidades">
+            <div class="col"> <i class="habilidad fa fa-bolt"></i> {{ habilidad.ability.name }} </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="detalles">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-timeline">
+                <div class="timeline">
+                  <h4 class="timeline-content">
+                    <div class="timeline-year">{{pokemon.altura}}</div>
+                    <h3 class="title">Altura</h3>
+                    <div class="timeline-icon"></div>
+                  </h4>
+                </div>
+                <div class="timeline">
+                  <h4 class="timeline-content">
+                    <div class="timeline-year">{{pokemon.peso}}</div>
+                    <h3 class="title">Peso</h3>
+                    <div class="timeline-icon"></div>
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="espec">
+        <div class="desc">
+          <div style="display: block">
+            <canvas baseChart [data]="radarChartData" [options]="radarChartOptions" [type]="radarChartType">
+            </canvas>
+          </div>
+        </div>
+        <button class="btn-espec">Estadisticas</button>
+      </div>
+    </div>
+  </div>
 </section>

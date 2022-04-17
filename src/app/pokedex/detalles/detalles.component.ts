@@ -15,12 +15,29 @@ export class DetallesComponent implements OnInit {
   private param: string = '';
   pokemons: any[] = [];
   public estadisticas: number[] = []
-  pieChartData = [120, 150, 180, 90]
+  pieChartData = [120, 150, 180, 90, 85, 59]
   etiquetas: string[] = ['HP','Ataque','Defensa','A-Especial', 'D-Especial', 'Velocidad']
-  constructor( public id: ActivatedRoute, private pokeService: PokedexService ) {
-    console.log(this.pieChartData);
 
-   }
+  typeColor = [
+    { normal: 'Lavender', border: 'Gainsboro'},
+    { lucha: 'Firebrick', border: 'Darkred'},
+    { veneno: 'Mediumpurple', border: 'Blueviolet'},
+    { roca: 'Peru', border: 'Chocolate'},
+    { bicho: 'YellowGreen', border: 'OliveDrab'},
+    { fantasma: 'Purple', border: 'Indigo'},
+    { acero: 'LightGrey', border: 'Silver'},
+    { agua: 'RoyalBlue', border: 'MediumSlateBlue'},
+    { dragón: 'MediumSlateBlue', border: 'SlateBlue'},
+    { electrico: 'Yellow', border: 'Gold'},
+    { fuego: 'Crimson', border: 'Firebrick'},
+    { hada: 'rgb(255, 136, 238)', border: 'rgb(255, 187, 238)'},
+    { hielo: 'AquaMarine', border: 'PaleTurquoise'},
+    { planta: 'Lime', border: 'Limegreen'},
+    { psiquico: 'Violet', border: 'Plum'},
+    { siniestro: 'SlateGray', border: 'Darkslategray'},
+    { tierra: 'BurlyWood', border: 'Tan'},
+  ]
+  constructor( public id: ActivatedRoute, private pokeService: PokedexService ) {}
 
   ngOnInit(): void {
     this.id.params.subscribe( (params: Params) => {
@@ -43,7 +60,7 @@ export class DetallesComponent implements OnInit {
         habilidades: resp.abilities,
         experiencia_base: resp.base_experience,
         altura: resp.height,
-        ancho: resp.weight,
+        peso: resp.weight,
         estadisticas: resp.stats,
         movimientos: resp.moves,
         cp: resp.base_experience
@@ -55,7 +72,6 @@ export class DetallesComponent implements OnInit {
 
       this.pokemons.push(pokemon);
       console.log(this.pokemons);
-      console.log(this.estadisticas);
 
     });
   }
@@ -67,7 +83,7 @@ export class DetallesComponent implements OnInit {
   public radarChartData: ChartData<'radar'> = {
     labels: this.etiquetas,
     datasets: [
-      { data: this.estadisticas, label: 'Estadisticas' },
+      { data: this.pieChartData, label: 'Estadisticas' },
     ]
   };
   public radarChartType: ChartType = 'radar';

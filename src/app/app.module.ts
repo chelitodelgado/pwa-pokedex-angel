@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pokedex/home/home.component';
 import { NavbarComponent } from './pokedex/share/navbar/navbar.component';
-import { NetworkComponent } from './pokedex/share/network/network.component';
 import { DetallesComponent } from './pokedex/detalles/detalles.component';
 
 import { NgChartsModule } from 'ng2-charts';
@@ -25,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    NetworkComponent,
     DetallesComponent,
   ],
   imports: [
