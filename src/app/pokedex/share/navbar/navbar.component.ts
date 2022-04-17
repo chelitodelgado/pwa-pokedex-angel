@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
       url: '/'
     },
     {
-      item: 'Poratafolio',
+      item: 'Portafolio',
       url: 'https://angel-cv.pages.dev/'
     }
   ]
