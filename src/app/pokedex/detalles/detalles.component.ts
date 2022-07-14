@@ -14,7 +14,7 @@ export class DetallesComponent implements OnInit {
 
   private param: string = '';
   pokemons: any[] = [];
-  public estadisticas: number[] = []
+  public estadisticas: number[] = [];
   pieChartData = [120, 150, 180, 90, 85, 59]
   etiquetas: string[] = ['HP','Ataque','Defensa','A-Especial', 'D-Especial', 'Velocidad']
 
